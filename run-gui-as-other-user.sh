@@ -4,6 +4,9 @@
 
 # correr como el usuario que posee la app
 [otheruser@localhost]$ export DISPLAY=:0 
+# también puedo ejecutar el export desde un archivo
+#[otheruser@localhost]$ source exportDisplay.sh
+
 [otheruser@localhost]$ ./run-mi-app.sh
 # una vez terminada de utilizar salgo
 [otheruser@localhost]$ exit
