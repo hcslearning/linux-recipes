@@ -1,5 +1,6 @@
 #phpVersion=7.2.10
 phpVersion=7.2.21
+phpInstallDir=/opt/php7
 
 echo "Descargando PHP"
 #wget "http://us1.php.net/distributions/php-${phpVersion}.tar.bz2"
