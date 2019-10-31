@@ -3,10 +3,12 @@
 sudo chcon -R -t httpd_sys_content_rw_t files
 sudo chcon -R -t httpd_sys_content_t index.html
 
+# lista los contextos, se pueden sacar los ejemplos de aquí
+semanage fcontext -l
 # para crear cambios persistentes, debo usar semanage
 semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/ventas1.cl/public_html/sites/default/files(/.*)?"
 # lo anterior agrego eso al registro, para aplicar debo usar restorecon
-restorecon -R v /var/www
+restorecon -RFvv /var/www
 # puedo revisar las reglas aplicadas al dir /var/www buscando con grep
 semanage fcontext -l | grep -i /var/www
 # puedo eliminar una regla con
