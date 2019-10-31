@@ -1,7 +1,18 @@
+# busca en audit.log los registro generados por selinux para corregir
+#all denials	
+ausearch -m avc
+#denials for that today	
+ausearch -m avc -ts today
+#denials from the last 10 minutes	
+ausearch -m avc -ts recent
+# busca en un servicio particular
+ausearch -m avc -c httpd
+ausearch -m avc -c smbd
+
 # cambio del contexto del directorio `files` para que pueda ser escrito por el proceso apache
 # al usar chcon se realizar cambios de prueba, porque no son persistentes
-sudo chcon -R -t httpd_sys_content_rw_t files
-sudo chcon -R -t httpd_sys_content_t index.html
+chcon -R -t httpd_sys_content_rw_t files
+chcon -R -t httpd_sys_content_t index.html
 
 # lista los contextos, se pueden sacar los ejemplos de aquí
 semanage fcontext -l
