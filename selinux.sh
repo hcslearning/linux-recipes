@@ -18,6 +18,8 @@ chcon -R -t httpd_sys_content_t index.html
 semanage fcontext -l
 # para crear cambios persistentes, debo usar semanage
 semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/ventas1.cl/public_html/sites/default/files(/.*)?"
+# copia el contexto de otro path
+semanage fcontext -a -e /var/www /var/test_www
 # lo anterior agrego eso al registro, para aplicar debo usar restorecon
 restorecon -RFvv /var/www
 # puedo revisar las reglas aplicadas al dir /var/www buscando con grep
