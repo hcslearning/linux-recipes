@@ -1,3 +1,5 @@
+#Fuente: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/using_selinux/index 
+
 # busca en audit.log los registro generados por selinux para corregir
 #all denials	
 ausearch -m avc
