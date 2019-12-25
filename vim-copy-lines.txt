@@ -1,0 +1,6 @@
+2 alternativas para copiar las 3 lineas desde donde esta el cursor
+1) 3Y
+2) "i3Y
+la 1era la copia el registro principal, y la 2da en el registro 'i'
+
+
