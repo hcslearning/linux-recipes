@@ -1,0 +1,7 @@
+Ctrl-ws - split current window horizontally
+Ctrl-wv - split current window vertically
+:sp[lit] {file} - split current window horizontally
+:vsp[lit] {file} - split current window vertically
+Ctrl-w cambia el cursor de ventana
+
+
