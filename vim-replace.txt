@@ -1,0 +1,31 @@
+La sintaxis para reemplazar es la siguiente:
+:[range]s[ubstitute]/{pattern}/{string}/[flags]
+Flags:
+g = global
+c = da la oportunidad para confirmar o rechazar cada cambio
+n = suprime el comportamiento de substituir y solo muestra el número de ocurrencias
+& = permite reutilizar los mismos flags utilizados en la sustitución anterior
+Caracteres especiales para el reemplazo
+----------------------------------------
+\r carriage return
+\t tab
+\\ single backslash
+\1 first submatch
+\2 secound submatch, hasta el \9
+\0 entire match pattern
+& entire match pattern
+~ string from previous substitute
+\={Vim scrip} Evaluate Vim script expression; use result as replacement
+Para reemplazar de manera global (varias apariciones en una línea)
+y sobre todas las líneas puedes usar:
+:%s/nuevo/reemplazo/gc
+Otra alternativa es hacer la búsqueda primero y luego el reemplazo
+sin tener q reescribir el patrón de búsqueda.
+ej:
+/nuevo
+:%s//reemplazo/gc
+Texto de ejemplo:
+nuevo.cl
+Lorem ipsum dolor nuevo sitio http://www.nuevo.cl entre medio
+holi.cl lala nanan
+Nada que ver nuevo.cl
