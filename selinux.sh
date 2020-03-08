@@ -28,3 +28,7 @@ restorecon -RFvv /var/www
 semanage fcontext -l | grep -i /var/www
 # puedo eliminar una regla con
 semanage fcontext -d "/var/www/ventas1.cl/public_html/sites/default/files(/.*)?"
+
+# lista con políticas lista para activar
+getsebool -a
+setsebool -P httpd_can_network_connect on
